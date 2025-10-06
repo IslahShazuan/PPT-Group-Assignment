@@ -6,19 +6,22 @@ public class Enemy
 	Random rand = new Random();
 	
 	//Variables
-	private int rand_num1 = rand.nextInt(3);
+	private int rand_num1;
 	private String enemyName;	
 	private int enemyCurrentHealth, enemyMaxHealth, enemyAttack, enemyDefence, enemyChoice;
 	
 	//Constructor
-	public Enemy()
+	Enemy()
 	{
+        rand_num1 = rand.nextInt(3);
+        
 		//Initialise the enemy by using the random class to randomise the enemy
  		switch(rand_num1)
 		{
 			case 0 ->
 			{
 				enemyName = "A";
+				enemyCurrentHealth = 10;
 				enemyMaxHealth = 10;
 				enemyAttack= 2;
 				enemyDefence= 2;
@@ -26,6 +29,7 @@ public class Enemy
 			case 1 ->
 			{
 				enemyName = "O";
+				enemyCurrentHealth = 12;
 				enemyMaxHealth = 12;
 				enemyAttack= 1;
 				enemyDefence= 3;
@@ -33,6 +37,7 @@ public class Enemy
 			case 2 ->
 			{
 				enemyName = "X";
+				enemyCurrentHealth = 8;
 				enemyMaxHealth = 8;
 				enemyAttack= 3;
 				enemyDefence= 1;
@@ -53,13 +58,13 @@ public class Enemy
 	}
 	
 	//Getter for enemy current health
-	public int getCurrentEnemyHealth()
+	public int getEnemyCurrentHealth()
 	{
 		return enemyCurrentHealth;
 	}
 	
 	//Getter for enemy max health
-	public int getMaxEnemyHealth()
+	public int getEnemyMaxHealth()
 	{
 		return enemyMaxHealth;
 	}
@@ -80,7 +85,7 @@ public class Enemy
 	public void setEnemyChoice()
 	{
 		//Variable for enemy action. The probability is set to out of 100.
-		private int rand_num2 = rand.nextInt(100);
+		int rand_num2 = rand.nextInt(100);
 		
 		//Decides what action the enemy takes.
 		switch(rand_num1)
@@ -91,7 +96,7 @@ public class Enemy
 				{
 					enemyChoice = 1;
 				}
-				else if(rand_num2 => 50 && rand_num2 <= 99)
+				else if(rand_num2 >= 50 && rand_num2 <= 99)
 				{
 					enemyChoice = 2;
 				}
@@ -124,6 +129,42 @@ public class Enemy
 	//Getter for enemy choice
 	public int getEnemyChoice()
 	{
+        setEnemyChoice();
 		return enemyChoice;
 	}
+    
+    //Method to reset the class
+    public void enemyReset()
+    {
+        rand_num1 = rand.nextInt(3);
+        
+		//Initialise the enemy by using the random class to randomise the enemy
+ 		switch(rand_num1)
+		{
+			case 0 ->
+			{
+				enemyName = "A";
+				enemyCurrentHealth = 10;
+				enemyMaxHealth = 10;
+				enemyAttack= 2;
+				enemyDefence= 2;
+			}
+			case 1 ->
+			{
+				enemyName = "O";
+				enemyCurrentHealth = 12;
+				enemyMaxHealth = 12;
+				enemyAttack= 1;
+				enemyDefence= 3;
+			}
+			case 2 ->
+			{
+				enemyName = "X";
+				enemyCurrentHealth = 8;
+				enemyMaxHealth = 8;
+				enemyAttack= 3;
+				enemyDefence= 1;
+			}
+		}
+    }
 }

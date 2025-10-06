@@ -2,12 +2,17 @@ public class Player
 {
 	//Variables
 	private String playerName;
-	private int playerCurrentHealth, playerMaxHealth, playerAttack, playerDefence, playerChoice;
+	private int playerLevel, playerCurrentHealth, playerMaxHealth, playerMana, playerAttack, playerDefence;
 	
 	//Constructor
 	public Player()
 	{
-		
+		playerLevel = 0;
+	    playerCurrentHealth = 10;
+	    playerMaxHealth = 10;
+	    playerMana = 10;
+	    playerAttack = 3;
+	    playerDefence = 3;
 	}
 	
 	//Setter for player name
@@ -22,6 +27,18 @@ public class Player
 		return playerName;
 	}
 	
+	//Setter for player level
+	public void setPlayerLevel(int pl)
+	{
+		playerLevel = pl;
+	}
+	
+	//Getter for player level
+	public int getPlayerLevel()
+	{
+		return playerLevel;
+	}
+        
 	//Setter for player current health
 	public void setPlayerCurrentHealth(int php)
 	{
@@ -35,9 +52,9 @@ public class Player
 	}
 	
 	//Setter for player max health
-	public void setPlayerMaxHealth()
+	public void setPlayerMaxHealth(int php)
 	{
-		
+		playerMaxHealth += php;
 	}
 	
 	//Getter for player max health
@@ -45,11 +62,23 @@ public class Player
 	{
 		return playerMaxHealth;
 	}
+    
+	//Setter for player current mana
+	public void setPlayerMana(int pmp)
+	{
+		playerMana = pmp;
+	}
+	
+	//Getter for player current mana
+	public int getPlayerMana()
+	{
+		return playerMana;
+	}
 	
 	//Setter for player attack
-	public void setPlayerAttack()
+	public void setPlayerAttack(int patt)
 	{
-		
+		playerAttack += patt;
 	}
 	
 	//Getter for player attack
@@ -59,26 +88,14 @@ public class Player
 	}
 	
 	//Setter for player defence
-	public void setPlayerDefence()
+	public void setPlayerDefence(int pdef)
 	{
-		
+		playerDefence += pdef;
 	}
 	
 	//Getter for player defence
 	public int getPlayerDefence()
 	{
 		return playerDefence;
-	}
-	
-	//Setter for player choice
-	public void setPlayerChoice()
-	{
-		
-	}
-	
-	//Getter for player choice
-	public int getPlayerChoice()
-	{
-		return playerChoice;
 	}
 }

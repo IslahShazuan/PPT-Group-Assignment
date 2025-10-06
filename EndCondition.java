@@ -1,12 +1,7 @@
+import javax.swing.JOptionPane;
+
 public class EndCondition
-{
-	
-	//Constructor
-	public EndCondition()
-	{
-		
-	}
-	
+{	
 	//Method to check if the game has ended.
 	public int checkEnd(int php, int ehp)
 	{
